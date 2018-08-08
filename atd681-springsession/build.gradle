@@ -1,0 +1,33 @@
+apply plugin: 'war'
+apply plugin: 'eclipse'
+
+group = "com.atd681"
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+compileJava.options*.encoding = "UTF-8"
+
+// 阿里云资源库
+repositories { maven{ url "http://maven.aliyun.com/nexus/content/groups/public/" } }
+
+dependencies {
+    compile (
+
+            // Servlet依赖
+            "javax.servlet:servlet-api:3.0-alpha-1",
+
+            // Spring依赖
+            "org.springframework:spring-webmvc:4.3.12.RELEASE",
+            "org.springframework:spring-context-support:4.3.12.RELEASE",
+
+            // Spring Session依赖
+            "org.springframework.session:spring-session-data-redis:2.0.5.RELEASE",
+
+            // Redis依赖
+            "io.lettuce:lettuce-core:5.0.4.RELEASE",
+
+            // Groovy DSL依赖
+            "org.codehaus.groovy:groovy-all:2.4.7"
+
+            )
+}
