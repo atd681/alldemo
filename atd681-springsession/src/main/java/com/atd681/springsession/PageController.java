@@ -1,5 +1,6 @@
 package com.atd681.springsession;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -17,28 +18,29 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class PageController {
 
     /**
-     * Session中设置值
+     * 获取部署项目的Tomcat端口号
      * 
      * @author atd681
-     * @since 2018年8月1日
+     * @since 2018年8月9日
      */
-    @RequestMapping("/value/set")
+    @RequestMapping("/port/get")
     @ResponseBody
-    public String setSession(HttpSession session) {
-        session.setAttribute("username", "dahuangfeng~~~");
-        return "success";
+    public String getPort(HttpServletRequest request) {
+        return String.valueOf(request.getLocalPort());
     }
 
     /**
-     * 从SESSION中取值
+     * 获取部署项目的SESSION ID
      * 
      * @author atd681
-     * @since 2018年8月1日
+     * @since 2018年8月9日
      */
-    @RequestMapping("/value/get")
+    @RequestMapping("/sessionid/get")
     @ResponseBody
-    public String getSessionValue(HttpSession session, ModelMap data) {
-        return "SESSION_ID: " + session.getId() + " ----- USERNAME: " + session.getAttribute("username");
+    public String getSessionId(HttpServletRequest request) {
+        int port = request.getLocalPort(); // 端口
+        String sessionId = request.getSession().getId(); // SESSION ID
+        return "port: " + port + ", session id: " + sessionId;
     }
 
 }

@@ -7,6 +7,32 @@
 
 	<display-name>atd681-springsession</display-name>
 
+	<!-- Spring Context Listener -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>org.springframework.web.context.support.GroovyWebApplicationContext</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath*:/spring-context.groovy
+		</param-value>
+	</context-param>
+
+	<!-- Spring Session过滤器 -->
+	<!-- 负责在进入WEB应用之前将Tomcat生成的SESSION替换为Redis中的SESSION -->
+	<filter>
+		<filter-name>springSessionRepositoryFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSessionRepositoryFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 	<!-- Spring MVC -->
 	<servlet>
 		<servlet-name>springmvc</servlet-name>
