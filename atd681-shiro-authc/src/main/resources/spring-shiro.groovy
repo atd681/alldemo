@@ -31,7 +31,9 @@ beans {
     }
 
     // 安全管理器
-    securityManager(DefaultWebSecurityManager) {  realm = ref("userRealm")  }
+    securityManager(DefaultWebSecurityManager) {  
+        realm = ref("userRealm")  
+    }
 
     // 定义Realm
     userRealm(UserRealm)

@@ -1,7 +1,5 @@
 package com.atd681.shiro.authc;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
