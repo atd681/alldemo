@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="data:image/ico;base64,aWNv">
 <title>PAGE_A</title>
 </head>
 <body>

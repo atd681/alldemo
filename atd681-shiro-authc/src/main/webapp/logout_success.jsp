@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="data:image/ico;base64,aWNv">
 <title>登出成功</title>
 </head>
 <body>
