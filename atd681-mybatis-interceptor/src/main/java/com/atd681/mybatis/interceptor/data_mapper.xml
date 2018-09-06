@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atd681.mybatis.interceptor.DataDAO">
+	
+	<!-- 添加数据,内容为参数i的值 -->
+	<insert id="insert">
+		INSERT INTO atd681_mybatis_test ( dv ) VALUES ( #{dv} )
+	</insert>
+	
+	<!-- 更新数据,更新为参数u的值 -->
+	<update id="update">
+		UPDATE atd681_mybatis_test SET dv = #{dv}
+	</update>
+	
+	<!-- 删除数据 -->
+	<delete id="delete">
+		DELETE FROM atd681_mybatis_test
+	</delete>
+	
+</mapper> 
